@@ -17,9 +17,6 @@ public:
 private:
     Grid &grid;
     int size;
-
-private:
-    int size;
 };
 
 class Move_Command : public Command{
