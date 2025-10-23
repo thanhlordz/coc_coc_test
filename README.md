@@ -94,16 +94,18 @@ The console should output like this:
 
 2. Identify Entities, Attributes, and Methods
 
-- Entities: Robot, Grid, Invoker, Command.
-- Attributes:
-+ Robot: current position (x, y)
-+ Grid: 2D vector of cells
-+ Command: target coordinates or grid size
-- Methods:
-+ Robot: move_to(), bresenham_line()
-+ Grid: set_size(), print()
-+ Invoker: command_call()
-+ Command: execute()
+**Entities:** Robot, Grid, Invoker, Command.
+
+**Attributes:**
+- Robot: current position (x, y)
+- Grid: 2D vector of cells
+- Command: target coordinates or grid 
+
+**Methods:**
+- Robot: move_to(), bresenham_line()
+- Grid: set_size(), print()
+- Invoker: command_call()
+- Command: execute()
 
 3. Apply Command Pattern
 
@@ -120,7 +122,6 @@ The console should output like this:
 5. Object-Oriented Design Principles
 
 Clear separation of responsibilities:
-
 - Robot → movement
 - Grid → board management
 - Commands → encapsulate actions
