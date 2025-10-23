@@ -94,30 +94,30 @@ The console should output like this:
 
 2. Identify Entities, Attributes, and Methods
 
-**Entities:** Robot, Grid, Invoker, Command.
+- **Entities:** Robot, Grid, Invoker, Command.
 
-**Attributes:**
-- Robot: current position (x, y)
-- Grid: 2D vector of cells
-- Command: target coordinates or grid 
+- **Attributes:**
+    - Robot: current position (x, y)
+    - Grid: 2D vector of cells
+    - Command: target coordinates or grid 
 
-**Methods:**
-- Robot: move_to(), bresenham_line()
-- Grid: set_size(), print()
-- Invoker: command_call()
-- Command: execute()
+- **Methods:**
+    - Robot: move_to(), bresenham_line()
+    - Grid: set_size(), print()
+    - Invoker: command_call()
+    - Command: execute()
 
 3. Apply Command Pattern
 
-- Command Interface: Defines execute() for all commands.
-- Concrete Commands: DimensionCommand, MoveToCommand, LineToCommand. Each interacts with Robot/Grid and implements execute().
-- Receiver: Robot and Grid handle actual movement and drawing.
-- Invoker: Invoker class parses the input file, creates the appropriate command objects, and calls execute() on each.
+- **Command Interface:** Defines execute() for all commands.
+- **Concrete Commands:** DimensionCommand, MoveToCommand, LineToCommand. Each interacts with Robot/Grid and implements execute().
+- **Receiver:** Robot and Grid handle actual movement and drawing.
+- **Invoker:** Invoker class parses the input file, creates the appropriate command objects, and calls execute() on each.
 
 4. Algorithm Choices
 
-- Bresenham Line Algorithm: Used in LINE_TO to mark all cells along the line accurately, including diagonals.
-- Grid Representation: 2D vector of characters allows O(1) access for marking and printing.
+- **Bresenham Line Algorithm:** Used in LINE_TO to mark all cells along the line accurately, including diagonals.
+- **Grid Representation:** 2D vector of characters allows O(1) access for marking and printing.
 
 5. Object-Oriented Design Principles
 
