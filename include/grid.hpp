@@ -6,6 +6,7 @@
 class Grid {
 public:
     Grid(int N=0);
+    int get_size() const;
     void set_size(int N);
     void mark(int x, int y);
     void print();

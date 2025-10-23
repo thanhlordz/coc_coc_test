@@ -17,16 +17,16 @@ coc_coc_test/
 ├── app/                  # Contains executable
 ├── include/             # Header files
 │   ├── command.hpp      # Command interface
-│   ├── grid.hpp        # Grid class definition
-│   ├── invoker.hpp     # Command invoker
-│   └── robot.hpp       # Robot class definition
+│   ├── grid.hpp        # Grid class definition (Receiver)
+│   ├── invoker.hpp     # Parsing Command definition (Invoker)
+│   └── robot.hpp       # Robot class definition (Receiver)
 ├── src/                # Source files
 │   ├── command.cpp
 │   ├── grid.cpp
 │   ├── invoker.cpp
 │   ├── main.cpp
 │   └── robot.cpp
-└── input_file/         # Input commands
+└── input_file/         # Input files containing commands
     └── commands.txt
 ```
 

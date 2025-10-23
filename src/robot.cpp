@@ -7,13 +7,23 @@ void Robot::set_grid(Grid *g){
 }
 
 void Robot::move_to(int x, int y){
-    if(grid == nullptr) throw std::runtime_error("Grid isn't set for Robot");
+    if(grid == nullptr) 
+    throw std::runtime_error("Grid has not set for Robot");
+
+    if (x < 0 || y < 0 || x >= grid->get_size() || y >= grid->get_size())
+    throw std::out_of_range("Target coordinate out of grid range");
+
     pos_x = x;
     pos_y = y;
 }
 
 void Robot::bresenham_line(int x0, int y0, int x1, int y1) {
-    if(grid == nullptr) throw std::runtime_error("Grid isn't set for Robot");
+    if(grid == nullptr) 
+    throw std::runtime_error("Grid has not set for Robot");
+
+    if (x1 < 0 || y1 < 0 || x1 >= grid->get_size() || y1 >= grid->get_size())
+    throw std::out_of_range("Target coordinate out of grid range");
+
     int dx = std::abs(x1 - x0);
     int dy = std::abs(y1 - y0);
     int sx = (x0 < x1) ? 1 : -1;
@@ -22,25 +32,23 @@ void Robot::bresenham_line(int x0, int y0, int x1, int y1) {
     bool steep = dy > dx;
     if (steep) std::swap(dx, dy);
 
-    int err = 2 * dy - dx;
+    int e = 2 * dy - dx;
     for (int i = 0; i <= dx; ++i) {
         grid->mark(x0, y0);
         if (x0 == x1 && y0 == y1) break;
-
-        while (err >= 0) {
+        while (e >= 0) {
             if (steep)
                 x0 += sx;
             else
                 y0 += sy;
-            err -= 2 * dx;
+            e -= 2 * dx;
         }
-
         if (steep)
             y0 += sy;
         else
             x0 += sx;
 
-        err += 2 * dy;
+        e += 2 * dy;
     }
 }
 
