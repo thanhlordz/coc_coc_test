@@ -1,0 +1,23 @@
+Entities:
+    Grid:
+    - Attributes:
+        - Size N 
+        - A grid (2D arrays)
+    - Methods:
+        - Set and create a grid with a size of input parameter N
+        - Print the Grid
+
+    Robot:
+    - Attributes:
+        - Coordiante (x, y) with 0 <= x < N & 0 <= y < N
+        - Grid
+    - Methods:
+        - Moves robot to a specific coordinate (x, y)
+        - Draw Line from x0, y0 to x1, y1
+
+Commands Patterns:
+    - Command Interface
+    - Concrete commands
+        - DIMENSION N
+        - MOVE 
+        - DRAW 
