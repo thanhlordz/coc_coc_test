@@ -23,12 +23,16 @@ std::vector<Command*> Parser::command_call(const std::string &filename, Grid &gr
         }
         else if (command_type == "MOVE_TO"){
             int x, y;
-            iss >> x >> y;
+            if (!(iss >> x >> y)) {
+                throw std::runtime_error("Invalid command syntax: " + line);
+            }
             commands.push_back(new Move_Command(robot, x, y));
         }
         else if (command_type == "LINE_TO"){
             int x, y;
-            iss >> x >> y;
+            if (!(iss >> x >> y)) {
+                throw std::runtime_error("Invalid command syntax: " + line);
+            }
             commands.push_back(new Line_Command(robot, x, y));
         }
         else continue;
