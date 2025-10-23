@@ -6,7 +6,7 @@ int main(){
     Robot robot(&grid);
 
     try{
-        std::vector<Command*> commands = Parser::command_call("commands.txt", grid, robot);
+        std::vector<Command*> commands = Parser::command_call(COMMANDS_PATH, grid, robot);
 
         for (Command* cmd : commands){
             cmd->execute();

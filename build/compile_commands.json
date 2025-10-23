@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/PC/Downloads/coc_coc_test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DCOMMANDS_PATH=\\\"C:/Users/PC/Downloads/coc_coc_test/input_file/commands.txt\\\" @CMakeFiles/CocCoc_T.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\CocCoc_T.dir\\src\\command.cpp.obj -c C:\\Users\\PC\\Downloads\\coc_coc_test\\src\\command.cpp",
+  "file": "C:/Users/PC/Downloads/coc_coc_test/src/command.cpp",
+  "output": "CMakeFiles/CocCoc_T.dir/src/command.cpp.obj"
+},
+{
+  "directory": "C:/Users/PC/Downloads/coc_coc_test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DCOMMANDS_PATH=\\\"C:/Users/PC/Downloads/coc_coc_test/input_file/commands.txt\\\" @CMakeFiles/CocCoc_T.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\CocCoc_T.dir\\src\\grid.cpp.obj -c C:\\Users\\PC\\Downloads\\coc_coc_test\\src\\grid.cpp",
+  "file": "C:/Users/PC/Downloads/coc_coc_test/src/grid.cpp",
+  "output": "CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj"
+},
+{
+  "directory": "C:/Users/PC/Downloads/coc_coc_test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DCOMMANDS_PATH=\\\"C:/Users/PC/Downloads/coc_coc_test/input_file/commands.txt\\\" @CMakeFiles/CocCoc_T.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\CocCoc_T.dir\\src\\invoker.cpp.obj -c C:\\Users\\PC\\Downloads\\coc_coc_test\\src\\invoker.cpp",
+  "file": "C:/Users/PC/Downloads/coc_coc_test/src/invoker.cpp",
+  "output": "CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj"
+},
+{
+  "directory": "C:/Users/PC/Downloads/coc_coc_test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DCOMMANDS_PATH=\\\"C:/Users/PC/Downloads/coc_coc_test/input_file/commands.txt\\\" @CMakeFiles/CocCoc_T.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\CocCoc_T.dir\\src\\main.cpp.obj -c C:\\Users\\PC\\Downloads\\coc_coc_test\\src\\main.cpp",
+  "file": "C:/Users/PC/Downloads/coc_coc_test/src/main.cpp",
+  "output": "CMakeFiles/CocCoc_T.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/PC/Downloads/coc_coc_test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DCOMMANDS_PATH=\\\"C:/Users/PC/Downloads/coc_coc_test/input_file/commands.txt\\\" @CMakeFiles/CocCoc_T.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\CocCoc_T.dir\\src\\robot.cpp.obj -c C:\\Users\\PC\\Downloads\\coc_coc_test\\src\\robot.cpp",
+  "file": "C:/Users/PC/Downloads/coc_coc_test/src/robot.cpp",
+  "output": "CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj"
+}
+]

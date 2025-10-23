@@ -10,6 +10,8 @@ std::vector<Command*> Parser::command_call(const std::string &filename, Grid &gr
     std::string line;
 
     while (std::getline(file, line)){
+        for (char &c : line) if(c == ',') c = ' ';
+        
         std::istringstream iss(line);
         std::string command_type;
         iss >> command_type;
@@ -29,6 +31,7 @@ std::vector<Command*> Parser::command_call(const std::string &filename, Grid &gr
             iss >> x >> y;
             commands.push_back(new Line_Command(robot, x, y));
         }
+        else continue;
     }
 
     file.close();

@@ -1,0 +1,3 @@
+C:/Users/PC/Downloads/coc_coc_test/build/CMakeFiles/CocCoc_T.dir
+C:/Users/PC/Downloads/coc_coc_test/build/CMakeFiles/edit_cache.dir
+C:/Users/PC/Downloads/coc_coc_test/build/CMakeFiles/rebuild_cache.dir

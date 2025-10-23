@@ -3,6 +3,7 @@
 Grid::Grid(int N) : size(N), cells(N, std::vector<char>(N, '.')){}
 
 void Grid::set_size(int N){
+    if (N <= 0) throw std::runtime_error("Size must be a positive number");
     size = N;
     cells.assign(N, std::vector<char>(N, '.'));
 }

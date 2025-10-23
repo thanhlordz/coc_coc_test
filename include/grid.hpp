@@ -1,7 +1,6 @@
 #ifndef GRID_H
 #define GRID_H
 #include <vector>
-#include <vector>
 #include <iostream>
 
 class Grid {
