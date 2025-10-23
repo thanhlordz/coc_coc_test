@@ -103,7 +103,7 @@ Command Pattern:
 - **Receiver:** Robot and Grid handle actual movement and drawing.
 - **Invoker:** Invoker class parses the input file, creates the appropriate command objects, and calls execute() on each.
 
-This pattern enhances extensibility: adding a new command requires creating only a new concrete command class without modifying existing code.
+This pattern enhances extensibility: adding a new command requires creating only a new concrete command class without modifying existing code. 
 
 3. Algorithm Choices
 
