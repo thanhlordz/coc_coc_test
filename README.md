@@ -31,23 +31,17 @@ coc_coc_test/
 - CMake 3.15 or higher
 - Windows operating system
 
-## Building the Project
+## Build & Run
 
-1. Create and build the project:
 ```batch
 cmake -B build
 cmake --build build
-```
-
-2. The executable `CocCoc_T.exe` will be generated in the `app` directory
-
-## Running the Program
-
-Navigate to the app directory and run:
-```batch
 cd app
 .\CocCoc_T.exe
 ```
+
+The executable CocCoc_T.exe will run the simulation and print the final grid.
+
 ## Input File Format
 
 The `commands.txt` file should follow this format:
@@ -92,44 +86,26 @@ The console should output like this:
 - Output: final grid with "." for unvisited cells and "+" for drawn cells.
 - Constraints: robot starts at (0,0); coordinates must be in [0, N-1].
 
-2. Identify Entities, Attributes, and Methods
+**Objective:** Read commands and simulate a robot moving on an N×N grid, with output showing drawn paths.
 
-- **Entities:** Robot, Grid, Invoker, Command.
+2. Object-Oriented Design (Command Pattern)
 
-- **Attributes:**
-    - Robot: current position (x, y)
-    - Grid: 2D vector of cells
-    - Command: target coordinates or grid 
+- **Entities:** Robot, Grid, Invoker, Command
+- **Responsibilities:**
+    - Robot → movement & line drawing
+    - Grid → manages cells and printing
+    - Command → encapsulates actions (execute())
+    - Invoker → parses input and executes commands
 
-- **Methods:**
-    - Robot: move_to(), bresenham_line()
-    - Grid: set_size(), print()
-    - Invoker: command_call()
-    - Command: execute()
-
-3. Apply Command Pattern
-
+Command Pattern:
 - **Command Interface:** Defines execute() for all commands.
 - **Concrete Commands:** DimensionCommand, MoveToCommand, LineToCommand. Each interacts with Robot/Grid and implements execute().
 - **Receiver:** Robot and Grid handle actual movement and drawing.
 - **Invoker:** Invoker class parses the input file, creates the appropriate command objects, and calls execute() on each.
 
-4. Algorithm Choices
+This pattern enhances extensibility: adding a new command requires creating only a new concrete command class without modifying existing code.
 
-- **Bresenham Line Algorithm:** Used in LINE_TO to mark all cells along the line accurately, including diagonals.
+3. Algorithm Choices
+
+- **Bresenham Line Algorithm:** Used in LINE_TO to mark all cells along the line, including diagonals.
 - **Grid Representation:** 2D vector of characters allows O(1) access for marking and printing.
-
-5. Object-Oriented Design Principles
-
-Clear separation of responsibilities:
-- Robot → movement
-- Grid → board management
-- Commands → encapsulate actions
-- Invoker → orchestrates execution
-Extensible: adding a new command only requires creating a new concrete command class without modifying existing code.
-
-## Notes
-
-- The robot always starts at (0,0).
-- Coordinates are constrained within [0, N-1].
-- The program outputs the final grid to the console after processing all commands.
