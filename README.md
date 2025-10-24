@@ -36,7 +36,7 @@ coc_coc_test/
 - CMake 3.15 or higher
 - Windows operating system
 
-## Build & Run
+## Build
 
 ```batch
 # Clone repository
@@ -48,8 +48,23 @@ cd coc_coc_test
 cmake -B build
 cmake --build build
 ```
+
+If you encounter build issues, try the platform-specific commands below:
+
+**For Window OS(MinGW)**
+```batch
+cmake -G "MinGW Makefiles" -S . -B build
+cmake --build build
+```
+**For Linux/macOS**
+```batch
+cmake -S . -B build -G "Unix Makefiles"
+cmake --build build
+```
+
 Both the main executable and the test executable are generated in the /app directory after the build.
 
+## Run 
 ```batch
 # Run program
 cd app
