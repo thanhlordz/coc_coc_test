@@ -12,9 +12,9 @@ coc_coc_test/
 ├── app/ # Contains executable
 ├── include/ 
 │ ├── command.hpp # Command interface
-│ ├── grid.hpp # Grid class definition (Receiver)
+│ ├── grid.hpp # Grid class (Receiver)
 │ ├── parser.hpp #  Parsing class (Invoker)
-│ └── robot.hpp # Robot class definition (Receiver)
+│ └── robot.hpp # Robot class (Receiver)
 ├── src/
 │ ├── command.cpp 
 │ ├── grid.cpp
