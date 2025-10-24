@@ -10,12 +10,12 @@ Implementation of a robot that moves and draws lines on a 2D grid by executing c
 ```
 coc_coc_test/
 ├── app/ # Contains executable
-├── include/ # Header files
+├── include/ 
 │ ├── command.hpp # Command interface
 │ ├── grid.hpp # Grid class definition (Receiver)
 │ ├── parser.hpp #  Parsing class (Invoker)
 │ └── robot.hpp # Robot class definition (Receiver)
-├── src/ # Source files
+├── src/
 │ ├── command.cpp 
 │ ├── grid.cpp
 │ ├── parser.cpp
@@ -24,9 +24,9 @@ coc_coc_test/
 ├── input_file/ # Input files containing commands
 │ └── commands.txt
 ├── test/ # Unit tests
-│ ├── test_grid.cpp # Grid class test
-│ ├── test_robot.cpp # Robot class test
-│ └── test_parser.hpp # Parser class test
+│ ├── test_grid.cpp 
+│ ├── test_robot.cpp 
+│ └── test_parser.hpp 
 └── test_framework # Contains GoogleTest git
 ```
 
