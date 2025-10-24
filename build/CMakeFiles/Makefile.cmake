@@ -7,12 +7,15 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "C:/Program Files/CMake/share/cmake-4.2/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake"
+  "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDependentOption.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake"
+  "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake"
@@ -20,6 +23,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-C.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU.cmake"
+  "C:/Program Files/CMake/share/cmake-4.2/Modules/GNUInstallDirs.cmake"
+  "C:/Program Files/CMake/share/cmake-4.2/Modules/GoogleTest.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake"
@@ -39,11 +44,21 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake"
+  "C:/Program Files/CMake/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake"
   "C:/Users/PC/Downloads/coc_coc_test/CMakeLists.txt"
   "CMakeFiles/4.2.0-rc1/CMakeCCompiler.cmake"
   "CMakeFiles/4.2.0-rc1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.0-rc1/CMakeRCCompiler.cmake"
   "CMakeFiles/4.2.0-rc1/CMakeSystem.cmake"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/CMakeLists.txt"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googlemock/CMakeLists.txt"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googlemock/cmake/gmock.pc.in"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googlemock/cmake/gmock_main.pc.in"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googletest/CMakeLists.txt"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googletest/cmake/Config.cmake.in"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googletest/cmake/gtest.pc.in"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googletest/cmake/gtest_main.pc.in"
+  "C:/Users/PC/Downloads/coc_coc_test/test_framework/googletest/googletest/cmake/internal_utils.cmake"
   )
 
 # The corresponding makefile is:
@@ -55,9 +70,23 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test_framework/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test_framework/googletest/googletest/generated/gmock.pc"
+  "test_framework/googletest/googletest/generated/gmock_main.pc"
+  "test_framework/googletest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test_framework/googletest/googletest/generated/GTestConfigVersion.cmake"
+  "test_framework/googletest/googletest/generated/GTestConfig.cmake"
+  "test_framework/googletest/googletest/generated/gtest.pc"
+  "test_framework/googletest/googletest/generated/gtest_main.pc"
+  "test_framework/googletest/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/CocCoc_T.dir/DependInfo.cmake"
+  "CMakeFiles/test_runner.dir/DependInfo.cmake"
+  "test_framework/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "test_framework/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
+  "test_framework/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "test_framework/googletest/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )

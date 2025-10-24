@@ -9,20 +9,25 @@ Implementation of a robot that moves and draws lines on a 2D grid by executing c
 
 ```
 coc_coc_test/
-├── app/                  # Contains executable
-├── include/             # Header files
-│   ├── command.hpp      # Command interface
-│   ├── grid.hpp        # Grid class definition (Receiver)
-│   ├── invoker.hpp     # Parsing command class definition (Invoker)
-│   └── robot.hpp       # Robot class definition (Receiver)
-├── src/                # Source files
-│   ├── command.cpp
-│   ├── grid.cpp
-│   ├── invoker.cpp
-│   ├── main.cpp
-│   └── robot.cpp
-└── input_file/         # Input files containing commands
-    └── commands.txt
+├── app/ # Contains executable
+├── include/ # Header files
+│ ├── command.hpp # Command interface
+│ ├── grid.hpp # Grid class definition (Receiver)
+│ ├── parser.hpp #  Parsing class (Invoker)
+│ └── robot.hpp # Robot class definition (Receiver)
+├── src/ # Source files
+│ ├── command.cpp 
+│ ├── grid.cpp
+│ ├── parser.cpp
+│ ├── main.cpp
+│ └── robot.cpp
+├── input_file/ # Input files containing commands
+│ └── commands.txt
+├── test/ # Unit tests
+│ ├── test_grid.cpp # Grid class test
+│ ├── test_robot.cpp # Robot class test
+│ └── test_parser.hpp # Parser class test
+└── test_framework # Contains GoogleTest git
 ```
 
 ## Prerequisites
@@ -77,35 +82,75 @@ The console should output like this:
 - `MOVE_TO`: Moves the robot to specified coordinates
 - `LINE_TO`: Draws a line from the current position to the target cell using the Bresenham line algorithm.
 
-### Code Logic & Approach
+## Code Logic & Approach
 
 1. Requirement Analysis
 
-- Read commands from a text file and simulate a robot moving on an N×N grid.
-- Commands: DIMENSION N, MOVE_TO x,y, LINE_TO x,y.
-- Output: final grid with "." for unvisited cells and "+" for drawn cells.
-- Constraints: robot starts at (0,0); coordinates must be in [0, N-1].
-
-**Objective:** Read commands and simulate a robot moving on an N×N grid, with output showing drawn paths.
+- **Goal:** Simulate a robot moving and drawing on an N×N grid.
+- **Commands:** DIMENSION N, MOVE_TO x,y, LINE_TO x,y.
+- **Constraints:**
+    - Robot starts at (0,0).
+    - Coordinates must be within [0, N-1].
+- **Output:** Final grid printed to the console with "." and "+".
 
 2. Object-Oriented Design (Command Pattern)
 
-- **Entities:** Robot, Grid, Invoker, Command
-- **Responsibilities:**
-    - Robot → movement & line drawing
-    - Grid → manages cells and printing
-    - Command → encapsulates actions (execute())
-    - Invoker → parses input and executes commands
+- **Entities and Responsibilities:**
+| Class       | Responsibility                                        |
+| ----------- | ----------------------------------------------------- |
+| **Robot**   | Executes movement and line drawing                    |
+| **Grid**    | Stores and prints cell data                           |
+| **Command** | Abstract interface for all commands (`execute()`)     |
+| **Parser**  | Parses commands from the input file and executes them |
 
-Command Pattern:
-- **Command Interface:** Defines execute() for all commands.
-- **Concrete Commands:** DimensionCommand, MoveToCommand, LineToCommand. Each interacts with Robot/Grid and implements execute().
-- **Receiver:** Robot and Grid handle actual movement and drawing.
-- **Invoker:** Invoker class parses the input file, creates the appropriate command objects, and calls execute() on each.
+- **Command Pattern Structure:**
+[Parser] → creates → [Command*] → execute() → [Robot / Grid]
 
-This pattern enhances extensibility: adding a new command requires creating only a new concrete command class without modifying existing code. 
+    - Command Interface: Defines execute().
 
-3. Algorithm Choices
+    - Concrete Commands:
+        - DimensionCommand → sets grid size
+        - MoveToCommand → moves robot
+        - LineToCommand → draws line
 
-- **Bresenham Line Algorithm:** Used in LINE_TO to mark all cells along the line, including diagonals.
-- **Grid Representation:** 2D vector of characters allows O(1) access for marking and printing.
+    - Receivers: Robot and Grid handle actual execution.
+
+    - Invoker: Reads input, creates commands, executes them in order.
+
+    - Extensibility: To add a new command (e.g., CIRCLE_TO), define a new subclass of Command and register it in the Invoker.
+
+3. Execution
+```
+[1] Parser reads line
+    ↓
+[2] Recognize command type
+    ↓
+[3] Create a Command object
+    ↓
+[4] Store in a list
+    ↓
+[5] Later: loop → cmd->execute()
+```
+
+## Testing
+
+Unit testing is implemented using Google Test to verify core functionalities.
+
+Test Execution:
+```batch
+cd app
+.\test_runner.exe
+```
+Test Coverage
+| Component   | Test Focus                                              |
+| ----------- | ------------------------------------------------------- |
+| **Grid**    | Initialization, marking, printing, and bounds checking  |
+| **Robot**   | Movement accuracy, Bresenham line drawing correctness   |
+| **Parser**  | Command parsing, invalid inputs, and sequence execution |
+
+All tests are located under the test\ directory.
+
+## Performance Notes
+
+- Grid complexity: O(N²) memory usage — efficient for N ≤ 10⁴
+- Line drawing complexity: O(length) per LINE_TO command

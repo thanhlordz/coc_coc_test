@@ -4,6 +4,7 @@
 
 class Robot{
 public:
+    Robot() = default;
     Robot(Grid *g);
     void set_grid(Grid *g);
     void move_to(int x, int y);

@@ -64,6 +64,16 @@ CMAKE_BINARY_DIR = C:\Users\PC\Downloads\coc_coc_test\build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	"C:\Program Files\CMake\bin\ctest.exe" $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -83,6 +93,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -128,12 +183,78 @@ CocCoc_T/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/build
 .PHONY : CocCoc_T/fast
 
+#=============================================================================
+# Target rules for targets named test_runner
+
+# Build rule for target.
+test_runner: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_runner
+.PHONY : test_runner
+
+# fast build rule for target.
+test_runner/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/build
+.PHONY : test_runner/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f test_framework\googletest\googlemock\CMakeFiles\gmock.dir\build.make test_framework/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f test_framework\googletest\googlemock\CMakeFiles\gmock_main.dir\build.make test_framework/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f test_framework\googletest\googletest\CMakeFiles\gtest.dir\build.make test_framework/googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f test_framework\googletest\googletest\CMakeFiles\gtest_main.dir\build.make test_framework/googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 src/command.obj: src/command.cpp.obj
 .PHONY : src/command.obj
 
 # target to build an object file
 src/command.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/command.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/command.cpp.obj
 .PHONY : src/command.cpp.obj
 
 src/command.i: src/command.cpp.i
@@ -142,6 +263,7 @@ src/command.i: src/command.cpp.i
 # target to preprocess a source file
 src/command.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/command.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/command.cpp.i
 .PHONY : src/command.cpp.i
 
 src/command.s: src/command.cpp.s
@@ -150,6 +272,7 @@ src/command.s: src/command.cpp.s
 # target to generate assembly for a file
 src/command.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/command.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/command.cpp.s
 .PHONY : src/command.cpp.s
 
 src/grid.obj: src/grid.cpp.obj
@@ -158,6 +281,7 @@ src/grid.obj: src/grid.cpp.obj
 # target to build an object file
 src/grid.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/grid.cpp.obj
 .PHONY : src/grid.cpp.obj
 
 src/grid.i: src/grid.cpp.i
@@ -166,6 +290,7 @@ src/grid.i: src/grid.cpp.i
 # target to preprocess a source file
 src/grid.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/grid.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/grid.cpp.i
 .PHONY : src/grid.cpp.i
 
 src/grid.s: src/grid.cpp.s
@@ -174,31 +299,8 @@ src/grid.s: src/grid.cpp.s
 # target to generate assembly for a file
 src/grid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/grid.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/grid.cpp.s
 .PHONY : src/grid.cpp.s
-
-src/invoker.obj: src/invoker.cpp.obj
-.PHONY : src/invoker.obj
-
-# target to build an object file
-src/invoker.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj
-.PHONY : src/invoker.cpp.obj
-
-src/invoker.i: src/invoker.cpp.i
-.PHONY : src/invoker.i
-
-# target to preprocess a source file
-src/invoker.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/invoker.cpp.i
-.PHONY : src/invoker.cpp.i
-
-src/invoker.s: src/invoker.cpp.s
-.PHONY : src/invoker.s
-
-# target to generate assembly for a file
-src/invoker.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/invoker.cpp.s
-.PHONY : src/invoker.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -224,12 +326,40 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/parser.obj: src/parser.cpp.obj
+.PHONY : src/parser.obj
+
+# target to build an object file
+src/parser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/parser.cpp.obj
+.PHONY : src/parser.cpp.obj
+
+src/parser.i: src/parser.cpp.i
+.PHONY : src/parser.i
+
+# target to preprocess a source file
+src/parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/parser.cpp.i
+.PHONY : src/parser.cpp.i
+
+src/parser.s: src/parser.cpp.s
+.PHONY : src/parser.s
+
+# target to generate assembly for a file
+src/parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/parser.cpp.s
+.PHONY : src/parser.cpp.s
+
 src/robot.obj: src/robot.cpp.obj
 .PHONY : src/robot.obj
 
 # target to build an object file
 src/robot.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/robot.cpp.obj
 .PHONY : src/robot.cpp.obj
 
 src/robot.i: src/robot.cpp.i
@@ -238,6 +368,7 @@ src/robot.i: src/robot.cpp.i
 # target to preprocess a source file
 src/robot.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/robot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/robot.cpp.i
 .PHONY : src/robot.cpp.i
 
 src/robot.s: src/robot.cpp.s
@@ -246,7 +377,80 @@ src/robot.s: src/robot.cpp.s
 # target to generate assembly for a file
 src/robot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CocCoc_T.dir\build.make CMakeFiles/CocCoc_T.dir/src/robot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/src/robot.cpp.s
 .PHONY : src/robot.cpp.s
+
+test/test_grid.obj: test/test_grid.cpp.obj
+.PHONY : test/test_grid.obj
+
+# target to build an object file
+test/test_grid.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_grid.cpp.obj
+.PHONY : test/test_grid.cpp.obj
+
+test/test_grid.i: test/test_grid.cpp.i
+.PHONY : test/test_grid.i
+
+# target to preprocess a source file
+test/test_grid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_grid.cpp.i
+.PHONY : test/test_grid.cpp.i
+
+test/test_grid.s: test/test_grid.cpp.s
+.PHONY : test/test_grid.s
+
+# target to generate assembly for a file
+test/test_grid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_grid.cpp.s
+.PHONY : test/test_grid.cpp.s
+
+test/test_parser.obj: test/test_parser.cpp.obj
+.PHONY : test/test_parser.obj
+
+# target to build an object file
+test/test_parser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_parser.cpp.obj
+.PHONY : test/test_parser.cpp.obj
+
+test/test_parser.i: test/test_parser.cpp.i
+.PHONY : test/test_parser.i
+
+# target to preprocess a source file
+test/test_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_parser.cpp.i
+.PHONY : test/test_parser.cpp.i
+
+test/test_parser.s: test/test_parser.cpp.s
+.PHONY : test/test_parser.s
+
+# target to generate assembly for a file
+test/test_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_parser.cpp.s
+.PHONY : test/test_parser.cpp.s
+
+test/test_robot.obj: test/test_robot.cpp.obj
+.PHONY : test/test_robot.obj
+
+# target to build an object file
+test/test_robot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_robot.cpp.obj
+.PHONY : test/test_robot.cpp.obj
+
+test/test_robot.i: test/test_robot.cpp.i
+.PHONY : test/test_robot.i
+
+# target to preprocess a source file
+test/test_robot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_robot.cpp.i
+.PHONY : test/test_robot.cpp.i
+
+test/test_robot.s: test/test_robot.cpp.s
+.PHONY : test/test_robot.s
+
+# target to generate assembly for a file
+test/test_robot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_runner.dir\build.make CMakeFiles/test_runner.dir/test/test_robot.cpp.s
+.PHONY : test/test_robot.cpp.s
 
 # Help Target
 help:
@@ -255,23 +459,42 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... test
 	@echo ... CocCoc_T
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
+	@echo ... test_runner
 	@echo ... src/command.obj
 	@echo ... src/command.i
 	@echo ... src/command.s
 	@echo ... src/grid.obj
 	@echo ... src/grid.i
 	@echo ... src/grid.s
-	@echo ... src/invoker.obj
-	@echo ... src/invoker.i
-	@echo ... src/invoker.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/parser.obj
+	@echo ... src/parser.i
+	@echo ... src/parser.s
 	@echo ... src/robot.obj
 	@echo ... src/robot.i
 	@echo ... src/robot.s
+	@echo ... test/test_grid.obj
+	@echo ... test/test_grid.i
+	@echo ... test/test_grid.s
+	@echo ... test/test_parser.obj
+	@echo ... test/test_parser.i
+	@echo ... test/test_parser.s
+	@echo ... test/test_robot.obj
+	@echo ... test/test_robot.i
+	@echo ... test/test_robot.s
 .PHONY : help
 
 

@@ -10,8 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/PC/Downloads/coc_coc_test/src/command.cpp" "CMakeFiles/CocCoc_T.dir/src/command.cpp.obj" "gcc" "CMakeFiles/CocCoc_T.dir/src/command.cpp.obj.d"
   "C:/Users/PC/Downloads/coc_coc_test/src/grid.cpp" "CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj" "gcc" "CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj.d"
-  "C:/Users/PC/Downloads/coc_coc_test/src/invoker.cpp" "CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj" "gcc" "CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj.d"
   "C:/Users/PC/Downloads/coc_coc_test/src/main.cpp" "CMakeFiles/CocCoc_T.dir/src/main.cpp.obj" "gcc" "CMakeFiles/CocCoc_T.dir/src/main.cpp.obj.d"
+  "C:/Users/PC/Downloads/coc_coc_test/src/parser.cpp" "CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj" "gcc" "CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj.d"
   "C:/Users/PC/Downloads/coc_coc_test/src/robot.cpp" "CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj" "gcc" "CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj.d"
   )
 

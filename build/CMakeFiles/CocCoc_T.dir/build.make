@@ -71,11 +71,26 @@ include CMakeFiles/CocCoc_T.dir/flags.make
 CMakeFiles/CocCoc_T.dir/codegen:
 .PHONY : CMakeFiles/CocCoc_T.dir/codegen
 
+CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: CMakeFiles/CocCoc_T.dir/flags.make
+CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: CMakeFiles/CocCoc_T.dir/includes_CXX.rsp
+CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: C:/Users/PC/Downloads/coc_coc_test/src/main.cpp
+CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: CMakeFiles/CocCoc_T.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CocCoc_T.dir/src/main.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CocCoc_T.dir/src/main.cpp.obj -MF CMakeFiles\CocCoc_T.dir\src\main.cpp.obj.d -o CMakeFiles\CocCoc_T.dir\src\main.cpp.obj -c C:\Users\PC\Downloads\coc_coc_test\src\main.cpp
+
+CMakeFiles/CocCoc_T.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CocCoc_T.dir/src/main.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\PC\Downloads\coc_coc_test\src\main.cpp > CMakeFiles\CocCoc_T.dir\src\main.cpp.i
+
+CMakeFiles/CocCoc_T.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CocCoc_T.dir/src/main.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\PC\Downloads\coc_coc_test\src\main.cpp -o CMakeFiles\CocCoc_T.dir\src\main.cpp.s
+
 CMakeFiles/CocCoc_T.dir/src/command.cpp.obj: CMakeFiles/CocCoc_T.dir/flags.make
 CMakeFiles/CocCoc_T.dir/src/command.cpp.obj: CMakeFiles/CocCoc_T.dir/includes_CXX.rsp
 CMakeFiles/CocCoc_T.dir/src/command.cpp.obj: C:/Users/PC/Downloads/coc_coc_test/src/command.cpp
 CMakeFiles/CocCoc_T.dir/src/command.cpp.obj: CMakeFiles/CocCoc_T.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CocCoc_T.dir/src/command.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CocCoc_T.dir/src/command.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CocCoc_T.dir/src/command.cpp.obj -MF CMakeFiles\CocCoc_T.dir\src\command.cpp.obj.d -o CMakeFiles\CocCoc_T.dir\src\command.cpp.obj -c C:\Users\PC\Downloads\coc_coc_test\src\command.cpp
 
 CMakeFiles/CocCoc_T.dir/src/command.cpp.i: cmake_force
@@ -90,7 +105,7 @@ CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj: CMakeFiles/CocCoc_T.dir/flags.make
 CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj: CMakeFiles/CocCoc_T.dir/includes_CXX.rsp
 CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj: C:/Users/PC/Downloads/coc_coc_test/src/grid.cpp
 CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj: CMakeFiles/CocCoc_T.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj -MF CMakeFiles\CocCoc_T.dir\src\grid.cpp.obj.d -o CMakeFiles\CocCoc_T.dir\src\grid.cpp.obj -c C:\Users\PC\Downloads\coc_coc_test\src\grid.cpp
 
 CMakeFiles/CocCoc_T.dir/src/grid.cpp.i: cmake_force
@@ -101,35 +116,20 @@ CMakeFiles/CocCoc_T.dir/src/grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CocCoc_T.dir/src/grid.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\PC\Downloads\coc_coc_test\src\grid.cpp -o CMakeFiles\CocCoc_T.dir\src\grid.cpp.s
 
-CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj: CMakeFiles/CocCoc_T.dir/flags.make
-CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj: CMakeFiles/CocCoc_T.dir/includes_CXX.rsp
-CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj: C:/Users/PC/Downloads/coc_coc_test/src/invoker.cpp
-CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj: CMakeFiles/CocCoc_T.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj -MF CMakeFiles\CocCoc_T.dir\src\invoker.cpp.obj.d -o CMakeFiles\CocCoc_T.dir\src\invoker.cpp.obj -c C:\Users\PC\Downloads\coc_coc_test\src\invoker.cpp
+CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj: CMakeFiles/CocCoc_T.dir/flags.make
+CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj: CMakeFiles/CocCoc_T.dir/includes_CXX.rsp
+CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj: C:/Users/PC/Downloads/coc_coc_test/src/parser.cpp
+CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj: CMakeFiles/CocCoc_T.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj -MF CMakeFiles\CocCoc_T.dir\src\parser.cpp.obj.d -o CMakeFiles\CocCoc_T.dir\src\parser.cpp.obj -c C:\Users\PC\Downloads\coc_coc_test\src\parser.cpp
 
-CMakeFiles/CocCoc_T.dir/src/invoker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CocCoc_T.dir/src/invoker.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\PC\Downloads\coc_coc_test\src\invoker.cpp > CMakeFiles\CocCoc_T.dir\src\invoker.cpp.i
+CMakeFiles/CocCoc_T.dir/src/parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CocCoc_T.dir/src/parser.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\PC\Downloads\coc_coc_test\src\parser.cpp > CMakeFiles\CocCoc_T.dir\src\parser.cpp.i
 
-CMakeFiles/CocCoc_T.dir/src/invoker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CocCoc_T.dir/src/invoker.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\PC\Downloads\coc_coc_test\src\invoker.cpp -o CMakeFiles\CocCoc_T.dir\src\invoker.cpp.s
-
-CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: CMakeFiles/CocCoc_T.dir/flags.make
-CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: CMakeFiles/CocCoc_T.dir/includes_CXX.rsp
-CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: C:/Users/PC/Downloads/coc_coc_test/src/main.cpp
-CMakeFiles/CocCoc_T.dir/src/main.cpp.obj: CMakeFiles/CocCoc_T.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\PC\Downloads\coc_coc_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CocCoc_T.dir/src/main.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CocCoc_T.dir/src/main.cpp.obj -MF CMakeFiles\CocCoc_T.dir\src\main.cpp.obj.d -o CMakeFiles\CocCoc_T.dir\src\main.cpp.obj -c C:\Users\PC\Downloads\coc_coc_test\src\main.cpp
-
-CMakeFiles/CocCoc_T.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CocCoc_T.dir/src/main.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\PC\Downloads\coc_coc_test\src\main.cpp > CMakeFiles\CocCoc_T.dir\src\main.cpp.i
-
-CMakeFiles/CocCoc_T.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CocCoc_T.dir/src/main.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\PC\Downloads\coc_coc_test\src\main.cpp -o CMakeFiles\CocCoc_T.dir\src\main.cpp.s
+CMakeFiles/CocCoc_T.dir/src/parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CocCoc_T.dir/src/parser.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\PC\Downloads\coc_coc_test\src\parser.cpp -o CMakeFiles\CocCoc_T.dir\src\parser.cpp.s
 
 CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj: CMakeFiles/CocCoc_T.dir/flags.make
 CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj: CMakeFiles/CocCoc_T.dir/includes_CXX.rsp
@@ -148,19 +148,19 @@ CMakeFiles/CocCoc_T.dir/src/robot.cpp.s: cmake_force
 
 # Object files for target CocCoc_T
 CocCoc_T_OBJECTS = \
+"CMakeFiles/CocCoc_T.dir/src/main.cpp.obj" \
 "CMakeFiles/CocCoc_T.dir/src/command.cpp.obj" \
 "CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj" \
-"CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj" \
-"CMakeFiles/CocCoc_T.dir/src/main.cpp.obj" \
+"CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj" \
 "CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj"
 
 # External object files for target CocCoc_T
 CocCoc_T_EXTERNAL_OBJECTS =
 
+C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/src/main.cpp.obj
 C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/src/command.cpp.obj
 C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/src/grid.cpp.obj
-C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/src/invoker.cpp.obj
-C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/src/main.cpp.obj
+C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/src/parser.cpp.obj
 C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/src/robot.cpp.obj
 C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/build.make
 C:/Users/PC/Downloads/coc_coc_test/app/CocCoc_T.exe: CMakeFiles/CocCoc_T.dir/linkLibs.rsp
