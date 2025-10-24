@@ -39,13 +39,29 @@ coc_coc_test/
 ## Build & Run
 
 ```batch
+# Clone repository
+git clone https://github.com/thanhlordz/coc_coc_test
+cd coc_coc_test
+```
+```batch
+# Building the project
 cmake -B build
 cmake --build build
+```
+
+```batch
+# Run program
 cd app
 .\CocCoc_T.exe
 ```
 
-The executable CocCoc_T.exe will run the simulation and print the final grid.
+The executable CocCoc_T.exe will print the final grid to the console.
+
+```batch
+# Run tests
+cd app
+.\test_runner.exe
+```
 
 ## Input File Format
 
@@ -137,11 +153,6 @@ The console should output like this:
 
 Unit testing is implemented using Google Test to verify core functionalities.
 
-Test Execution:
-```batch
-cd app
-.\test_runner.exe
-```
 Test Coverage
 | Component   | Test Focus                                              |
 | ----------- | ------------------------------------------------------- |
