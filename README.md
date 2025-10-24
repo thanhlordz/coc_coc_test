@@ -49,7 +49,7 @@ cmake -B build
 cmake --build build
 ```
 
-If you encounter build issues, try the platform-specific commands below:
+If you encounter build issues, remove the existing \build folder and try the platform-specific commands below:
 
 **For Window OS(MinGW)**
 ```batch
