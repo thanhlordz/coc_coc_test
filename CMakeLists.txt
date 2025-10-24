@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(coc_coc_test VERSION 1.0 LANGUAGES CXX)
+project(coc_coc_test)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -12,8 +12,9 @@ list(REMOVE_ITEM APP_SOURCES "${CMAKE_SOURCE_DIR}/src/main.cpp")
 set(EXECUTABLE_NAME "CocCoc_T")
 add_executable(${EXECUTABLE_NAME} src/main.cpp ${APP_SOURCES})
 target_include_directories(${EXECUTABLE_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
-target_compile_definitions(${EXECUTABLE_NAME}
-    PRIVATE COMMANDS_PATH="${CMAKE_SOURCE_DIR}/input_file/commands.txt")
+
+file(TO_CMAKE_PATH "${CMAKE_SOURCE_DIR}/input_file/commands.txt" COMMANDS_PATH)
+target_compile_definitions(${EXECUTABLE_NAME} PRIVATE COMMANDS_PATH="${COMMANDS_PATH}")
 
 add_subdirectory(test_framework/googletest)
 

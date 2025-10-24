@@ -48,6 +48,7 @@ cd coc_coc_test
 cmake -B build
 cmake --build build
 ```
+Both the main executable and the test executable are generated in the /app directory after the build.
 
 ```batch
 # Run program
@@ -59,7 +60,6 @@ The executable CocCoc_T.exe will print the final grid to the console.
 
 ```batch
 # Run tests
-cd app
 .\test_runner.exe
 ```
 
@@ -121,6 +121,7 @@ The console should output like this:
 | **Parser**  | Parses commands from the input file and executes them |
 
 - **Command Pattern Structure:**
+
 [Parser] → creates → [Command*] → execute() → [Robot / Grid]
 
     - Command Interface: Defines execute().
