@@ -96,6 +96,7 @@ The console should output like this:
 2. Object-Oriented Design (Command Pattern)
 
 - **Entities and Responsibilities:**
+
 | Class       | Responsibility                                        |
 | ----------- | ----------------------------------------------------- |
 | **Robot**   | Executes movement and line drawing                    |
